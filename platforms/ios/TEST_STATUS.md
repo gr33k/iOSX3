@@ -1,4 +1,33 @@
-# ARMSX3 iOS test status
+# iOSX3 iOS test status (formerly ARMSX3)
+
+## 2026-10-31 16:47 PDT iOSX3 source-only rebrand
+
+- Public name selected by owner: `iOSX3`; rename the existing
+  `gr33k/ARMSX3` GitHub fork rather than detaching it. Keep the current
+  bundle ID for in-place updates and existing saves/settings. Do not sync
+  upstream implementation changes until the iPad GTA V gameplay gate passes.
+- This clean worktree is based on committed `ios-core` HEAD `6c3fade41`,
+  separate from the dirty GTA compact-iOS canary. It updates the public
+  README, app display/bundle name, visible menus, accessibility labels,
+  settings copy, and log prefixes. Existing executable/class/ABI symbols,
+  bundle ID, preferences keys, cache paths, and diagnostic filenames stay
+  unchanged for compatibility. Historical V0.35 downloads/screenshots
+  remain labeled as ARMSX3 with an explicit legacy-release note.
+- New icon master `docs/images/iosx3-app-icon.png` is 1024x1024,
+  SHA-256 `575a1a2f7bcb079a4af56f4c188cd24d9b913367def41b7352b4eb12c87988ca`.
+  It was produced with the built-in image-generation tool from the previous
+  app icon as a style reference, then resized to 120x120
+  (`84f5101513146f880a0b917a19a11e45c44e7d09d165694d97106ab79e42fa06`)
+  and 180x180
+  (`0dafbb204a1d139f8c6e5c7af62f6cf4a5a95bbd266aeae459fb0147b12b2368`)
+  app assets. The image has an X3 monogram, no tiny name text, and was
+  visually checked at 120px. Original icon remains as historical media.
+- `plutil -lint` PASS; `CFBundleDisplayName=iOSX3`,
+  `CFBundleName=iOSX3`, `CFBundleExecutable=ARMSX3iOS` checked.
+  No IPA built, signed, installed, or launched from this branch;
+  **physical branding and GTA gates PENDING**. The current installed
+  iPad/iPhone app and rollback IPAs are untouched. Rollback is the
+  preceding `ios-core` commit plus the preserved app packages.
 
 ## 2026-09-04 V0.37 modern iPad: JIT executes, VM startup still fails
 

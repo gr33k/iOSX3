@@ -371,7 +371,7 @@ static CGRect normalized_rect(CGRect container, CGFloat x, CGFloat y, CGFloat wi
     {
         app_version = @"unknown";
     }
-    title.text = [NSString stringWithFormat:@"ARMSX3 · Pre-Alpha %@", app_version];
+    title.text = [NSString stringWithFormat:@"iOSX3 · Pre-Alpha %@", app_version];
     title.textColor = UIColor.whiteColor;
     title.font = [UIFont systemFontOfSize:24.0 weight:UIFontWeightBlack];
     [stack addArrangedSubview:title];
@@ -996,7 +996,7 @@ static CGRect normalized_rect(CGRect container, CGFloat x, CGFloat y, CGFloat wi
 {
     if (self.fatalCoreError || self.core.hasFatalError)
     {
-        NSString* message = @"Core renderer failed; unsafe teardown was blocked. Relaunch ARMSX3 to reset without triggering the known stop crash.";
+        NSString* message = @"Core renderer failed; unsafe teardown was blocked. Relaunch iOSX3 to reset without triggering the known stop crash.";
         self.lastOperationMessage = message;
         self.stateLabel.text = message;
         self.stateLabel.textColor = [UIColor colorWithRed:1.0 green:0.48 blue:0.20 alpha:1.0];
@@ -1344,7 +1344,7 @@ static CGRect normalized_rect(CGRect container, CGFloat x, CGFloat y, CGFloat wi
     menu_button.circularHitArea = YES;
     self.landscapeMenuButton = menu_button;
     self.landscapeMenuButton.hidden = YES;
-    self.landscapeMenuButton.accessibilityLabel = @"ARMSX3 game menu";
+    self.landscapeMenuButton.accessibilityLabel = @"iOSX3 game menu";
     [self.landscapeMenuButton addTarget:self action:@selector(menuTouchDown:)
         forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
     [self.landscapeMenuButton addTarget:self action:@selector(showGameMenu:)
@@ -1467,7 +1467,7 @@ static CGRect normalized_rect(CGRect container, CGFloat x, CGFloat y, CGFloat wi
 - (void)showGameMenu:(UIButton*)sender
 {
     [self menuTouchCancelled:sender];
-    UIAlertController* menu = [UIAlertController alertControllerWithTitle:@"ARMSX3"
+    UIAlertController* menu = [UIAlertController alertControllerWithTitle:@"iOSX3"
         message:@"PS3 session controls" preferredStyle:UIAlertControllerStyleAlert];
     __weak ARMSX3ViewController* weak_self = self;
     [menu addAction:[UIAlertAction actionWithTitle:@"Settings"
@@ -1487,7 +1487,7 @@ static CGRect normalized_rect(CGRect container, CGFloat x, CGFloat y, CGFloat wi
                 [strong_self.core runtimeStatus],
                 strong_self.lastOperationMessage ?: @"None",
                 strong_self.lastCoreLog ?: @"None"];
-            UIAlertController* diagnostics = [UIAlertController alertControllerWithTitle:@"ARMSX3 Diagnostics"
+            UIAlertController* diagnostics = [UIAlertController alertControllerWithTitle:@"iOSX3 Diagnostics"
                 message:message preferredStyle:UIAlertControllerStyleAlert];
             [diagnostics addAction:[UIAlertAction actionWithTitle:@"Close"
                 style:UIAlertActionStyleCancel handler:nil]];

@@ -156,7 +156,7 @@ static void netiso_game_enumeration_callback(void* user_context, const rpcs3_ios
         NSURL* documents = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory
                                                                  inDomains:NSUserDomainMask].firstObject;
         _diagnosticLogURL = [documents URLByAppendingPathComponent:@"ARMSX3-last-session.log"];
-        NSString* header = [NSString stringWithFormat:@"ARMSX3 diagnostic session %.3f\n",
+        NSString* header = [NSString stringWithFormat:@"iOSX3 diagnostic session %.3f\n",
             NSDate.date.timeIntervalSince1970];
         [header writeToURL:_diagnosticLogURL atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }
@@ -254,14 +254,14 @@ static void netiso_game_enumeration_callback(void* user_context, const rpcs3_ios
             ? [NSString stringWithFormat:@"[Diagnostics] Coalesced %lu verbose core lines | %@",
                 (unsigned long)count, latest]
             : latest;
-        NSLog(@"[ARMSX3 iOS] %@", summary);
+        NSLog(@"[iOSX3] %@", summary);
         strong_self->_logHandler(summary);
     });
 }
 
 - (void)emit:(NSString*)line
 {
-    NSLog(@"[ARMSX3 iOS] %@", line);
+    NSLog(@"[iOSX3] %@", line);
     [self writeDiagnosticLine:line];
     if (!_logHandler)
         return;
@@ -557,7 +557,7 @@ static void netiso_game_enumeration_callback(void* user_context, const rpcs3_ios
         if (self.hasFatalError)
         {
             [self finish:completion succeeded:NO
-                message:@"Unsafe renderer teardown blocked after a fatal core error; relaunch ARMSX3 to reset this session"];
+                message:@"Unsafe renderer teardown blocked after a fatal core error; relaunch iOSX3 to reset this session"];
             return;
         }
         const rpcs3_ios_status status = rpcs3_ios_stop_emulation();
@@ -743,7 +743,7 @@ static void netiso_game_enumeration_callback(void* user_context, const rpcs3_ios
         performance_now - _lastPerformanceLog >= 5.0)
     {
         _lastPerformanceLog = performance_now;
-        NSLog(@"[ARMSX3 PERF] %@", result);
+        NSLog(@"[iOSX3 PERF] %@", result);
     }
     return result;
 }

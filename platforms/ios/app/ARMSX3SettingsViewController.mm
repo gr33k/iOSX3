@@ -77,7 +77,7 @@ NSString* const ARMSX3KeepScreenAwake = @"ARMSX3KeepScreenAwake";
     if (section != 2)
         return nil;
     NSString* version = [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"] ?: @"unknown";
-    return [NSString stringWithFormat:@"ARMSX3 %@ · Pre-Alpha\nUses the accepted Vulkan/MoltenVK core. Native Metal gameplay remains under development. JIT and session safety checks remain active.", version];
+    return [NSString stringWithFormat:@"iOSX3 %@ · Pre-Alpha\nUses the accepted Vulkan/MoltenVK core. Native Metal gameplay remains under development. JIT and session safety checks remain active.", version];
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath

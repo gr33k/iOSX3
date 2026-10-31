@@ -1,6 +1,6 @@
-# ARMSX3 iOS core lane
+# iOSX3 core lane
 
-This directory contains the public, device-first iOS port harness for the
+This directory contains the public, device-first iOSX3 port harness for the
 RPCS3-derived ARMSX3 core. It does not contain PlayStation firmware, games,
 signing keys, device identifiers, or private server paths.
 
@@ -69,12 +69,12 @@ from mounting a second remote game over a running guest.
 Portrait retains the compact transparent test controls. Landscape uses the
 accepted true-alpha EmuHub PlayStation controller rails at their native aspect,
 eight exact D-pad sectors, continuous dual analog sticks, the documented
-artwork hit geometry, pressed-state feedback, and an in-game ARMSX3 menu. The
+artwork hit geometry, pressed-state feedback, and an in-game iOSX3 menu. The
 landscape stage is edge-to-edge; the game surface is aspect-fit in the complete
 center slot and neither video nor controller artwork is stretched.
 
 Settings can enable transient `PAD OK`/`PAD REJECT` telemetry with digital and
-analog values, plus compact runtime/last-operation state. The ARMSX3 menu can
+analog values, plus compact runtime/last-operation state. The iOSX3 menu can
 show the complete current diagnostic summary. Each run also writes
 `ARMSX3-last-session.log` to the app's file-sharing Documents directory so a
 launch failure remains inspectable after disconnecting the device.
