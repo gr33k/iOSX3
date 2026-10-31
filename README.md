@@ -1,16 +1,17 @@
 <p align="center">
-  <img src="docs/images/armsx3-app-icon.png" width="120" alt="ARMSX3 app icon">
+  <img src="docs/images/iosx3-app-icon.png" width="120" alt="iOSX3 app icon">
 </p>
 
-<h1 align="center">ARMSX3 for iOS</h1>
+<h1 align="center">iOSX3</h1>
 
 <p align="center">
   Experimental ARM64/JIT PlayStation 3 emulation for iPhone and iPad.<br>
-  A standalone feasibility build created for future EmuHub integration.
+  A standalone iOS fork and reusable PS3 core, affiliated with EmuHub but
+  independently branded and released.
 </p>
 
 <p align="center">
-  <a href="https://github.com/gr33k/ARMSX3/releases/tag/ios-prealpha-v0.35.0"><img alt="Release" src="https://img.shields.io/badge/release-v0.35.0-19b394"></a>
+  <a href="https://github.com/gr33k/iOSX3/releases/tag/ios-prealpha-v0.35.0"><img alt="Legacy ARMSX3 release" src="https://img.shields.io/badge/legacy%20release-v0.35.0-19b394"></a>
   <img alt="Status" src="https://img.shields.io/badge/status-pre--alpha-e7a43b">
   <img alt="iOS" src="https://img.shields.io/badge/iOS-15.0%2B-2f7cf6">
   <img alt="Architecture" src="https://img.shields.io/badge/architecture-arm64-607d8b">
@@ -39,9 +40,14 @@
 > [!WARNING]
 > This is an early pre-alpha. Compatibility, graphics, performance, input, and stability vary by title. Do not interpret a successful boot or menu as confirmed gameplay support.
 
+The V0.35 download and captures below predate the iOSX3 rebrand and still
+carry the ARMSX3 name. A renamed app package is not yet a qualified release.
+This `master` branch publishes the project overview; current iOS source and
+build instructions are on [`ios-core`](https://github.com/gr33k/iOSX3/tree/ios-core).
+
 ## What Works
 
-- A real ARM64/JIT ARMSX3 core on iOS 15+, with official PS3 firmware import.
+- A real ARM64/JIT iOSX3 core on iOS 15+, with official PS3 firmware import.
 - Local game import plus read-only PS3NetServ/NETISO streaming for ISO and extracted-folder libraries.
 - Touch controls in portrait and EmuHub PS2-style controller rails in landscape.
 - External MFi/PlayStation-compatible controller input through GameController.framework.
@@ -51,10 +57,10 @@ The active gameplay renderer is currently **Vulkan through MoltenVK**. A direct 
 
 ## Install
 
-Download the current **TrollStore** IPA from the [V0.35 prerelease](https://github.com/gr33k/ARMSX3/releases/tag/ios-prealpha-v0.35.0), then open it in TrollStore.
+Download the legacy **TrollStore** IPA from the [V0.35 prerelease](https://github.com/gr33k/iOSX3/releases/tag/ios-prealpha-v0.35.0), then open it in TrollStore.
 
 - The app requires arm64 and iOS/iPadOS 15.0 or later.
-- TrollStore officially supports iOS 14.0 beta 2 through 16.6.1, iOS 16.7 RC (`20H18`), and iOS 17.0. Because ARMSX3 requires iOS 15, its effective window starts at iOS 15.0. See [TrollStore's official compatibility statement](https://github.com/opa334/TrollStore#readme).
+- TrollStore officially supports iOS 14.0 beta 2 through 16.6.1, iOS 16.7 RC (`20H18`), and iOS 17.0. Because this build requires iOS 15, its effective window starts at iOS 15.0. See [TrollStore's official compatibility statement](https://github.com/opa334/TrollStore#readme).
 - iOS 16.7.x other than that RC and iOS 17.0.1+ are not supported by TrollStore.
 - Official PS3 firmware and legally obtained games are required; neither is included.
 - A normal free-development sideload does not preserve the JIT and memory entitlements used by this build.
@@ -119,17 +125,14 @@ The immediate engineering priority is replacing runtime Vulkan command translati
 
 Detailed iOS evidence and open gates are maintained in [TEST_STATUS.md](platforms/ios/TEST_STATUS.md). Network-disc design is documented in [PS3_NETWORK_DISC_DESIGN.md](platforms/ios/PS3_NETWORK_DISC_DESIGN.md).
 
-## Building
+## Source and Building
 
-The iOS build targets arm64/iOS 15 and requires Xcode plus the pinned dependencies fetched by the scripts under `platforms/ios/scripts`.
-
-```bash
-JOBS=1 platforms/ios/scripts/build-core-ios15.sh
-platforms/ios/scripts/build-core-ipa.sh
-```
-
-Keep builds serial on memory-constrained Macs. The generated IPA is ad-hoc signed with the required TrollStore entitlements and must still pass independent package inspection before release.
+This overview branch does not contain the app source. Use the
+[`ios-core` branch](https://github.com/gr33k/iOSX3/tree/ios-core) and its
+[`platforms/ios/README.md`](https://github.com/gr33k/iOSX3/blob/ios-core/platforms/ios/README.md)
+for current source, build instructions, and device qualification. A source
+build or renamed icon is not a released, tested IPA.
 
 ## Upstream and License
 
-ARMSX3 for iOS is based on [ARMSX3](https://github.com/ARMSX2/ARMSX3) and [RPCS3](https://github.com/RPCS3/rpcs3). Most files are licensed under `GPL-2.0-only`; some components carry different compatible licenses. Check [LICENSE](LICENSE) and individual file headers for details.
+iOSX3 (formerly the ARMSX3 iOS port) is based on [ARMSX3](https://github.com/ARMSX2/ARMSX3) and [RPCS3](https://github.com/RPCS3/rpcs3). Most files are licensed under `GPL-2.0-only`; some components carry different compatible licenses. Check [LICENSE](LICENSE) and individual file headers for details.
