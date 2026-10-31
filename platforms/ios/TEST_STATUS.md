@@ -6,6 +6,11 @@
   `gr33k/ARMSX3` GitHub fork rather than detaching it. Keep the current
   bundle ID for in-place updates and existing saves/settings. Do not sync
   upstream implementation changes until the iPad GTA V gameplay gate passes.
+- GitHub rename is complete: `https://github.com/gr33k/iOSX3` is public,
+  still reports `isFork=true` with parent `ARMSX2/ARMSX3`, and the renamed
+  fork has branding commits on both docs-only `master` and source
+  `ios-core`. Local `origin` now points at `gr33k/iOSX3`. This is a
+  repository/source gate, not an installed-app or gameplay gate.
 - This clean worktree is based on committed `ios-core` HEAD `6c3fade41`,
   separate from the dirty GTA compact-iOS canary. It updates the public
   README, app display/bundle name, visible menus, accessibility labels,
